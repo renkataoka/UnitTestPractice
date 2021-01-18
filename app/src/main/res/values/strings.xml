@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">UnitTestPractice</string>
+    <string name="hintInputBox">Enter text</string>
+    <string name="textInputMessage">This is label.</string>
 </resources>
