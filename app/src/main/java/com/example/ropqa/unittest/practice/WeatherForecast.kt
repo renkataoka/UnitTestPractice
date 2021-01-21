@@ -2,7 +2,8 @@ package com.example.ropqa.unittest.practice
 
 class WeatherForecast(
     private val satellite: Satellite,
-    private val recorder: WeatherRecorder
+    private val recorder: WeatherRecorder,
+    private val formatter: WeatherFormatter
 ) {
     fun shouldBringUmbrella(): Boolean {
         val weather = satellite.getWeather()
@@ -14,7 +15,8 @@ class WeatherForecast(
 
     fun recordCurrentWeather() {
         val weather = satellite.getWeather()
-        recorder.record(weather)
+        val formatted = formatter.format(weather)
+        recorder.record(formatted)
     }
 }
 
