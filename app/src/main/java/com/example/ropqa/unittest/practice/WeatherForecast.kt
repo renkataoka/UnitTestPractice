@@ -1,5 +1,6 @@
 package com.example.ropqa.unittest.practice
 
+@AllOpen
 class WeatherForecast(
     private val satellite: Satellite,
     private val recorder: WeatherRecorder,
