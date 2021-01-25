@@ -9,7 +9,7 @@ import org.junit.Test
 import java.lang.RuntimeException
 
 
-class WeatherForecastWithMockTest {
+class WeatherForecastWithMockSatelliteTest {
     lateinit var satellite: Satellite
     lateinit var weatherForecast: WeatherForecast
 
