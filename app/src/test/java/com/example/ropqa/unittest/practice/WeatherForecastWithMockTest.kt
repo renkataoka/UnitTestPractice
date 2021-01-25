@@ -6,6 +6,7 @@ import org.assertj.core.api.Assertions.*
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
+import java.lang.RuntimeException
 
 
 class WeatherForecastWithMockTest {
@@ -52,4 +53,17 @@ class WeatherForecastWithMockTest {
         val actual = weatherForecast.shouldBringUmbrella(37.580006, -122.345106)
         assertThat(actual).isTrue()
     }
+
+    @Test
+    fun shouldBringUmbrella_throwsException() {
+        whenever(satellite.getWeather(any(), any()))
+            .thenThrow(RuntimeException("ERROR"))
+        assertThatExceptionOfType(RuntimeException::class.java)
+            .isThrownBy {
+                weatherForecast.shouldBringUmbrella(37.580006, -122.345106)
+            }
+            .withMessage("ERROR")
+            .withNoCause()
+    }
+
 }
