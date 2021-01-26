@@ -16,17 +16,7 @@ class SpyWeatherFormatter : WeatherFormatter() {
 }
 
 open class WeatherRecorder {
-    open fun record(weather: String) {
+    open fun record(record: Record) {
         //Do something
-    }
-}
-
-class MockWeatherRecorder : WeatherRecorder() {
-    var weather: String? = null
-    var isCalled = false
-
-    override fun record(weather: String) {
-        this.weather = weather
-        isCalled = true
     }
 }

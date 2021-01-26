@@ -14,15 +14,17 @@ class WeatherForecast(
         }
     }
 
-    /**
-    fun recordCurrentWeather() {
-        val weather = satellite.getWeather()
-        val formatted = formatter.format(weather)
-        recorder.record(formatted)
+
+    fun recordCurrentWeather(latitude: Double, longitude: Double) {
+        val weather = satellite.getWeather(latitude, longitude)
+        val description = formatter.format(weather)
+        recorder.record(Record(description))
     }
-    **/
+
 }
 
 enum class Weather {
     SUNNY, CLOUDY, RAINY
 }
+
+class Record(val description: String)
